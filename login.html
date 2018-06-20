@@ -1,0 +1,38 @@
+<html lang="zh-CN">
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="=IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--以上几个是必须的-->
+    <meta name="description" content="hello">
+    <meta name="author" content="test">
+    <title>账簿登录</title>
+    
+    <!--inport bootstrap-->
+    <link href="./bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+  </head>
+  
+  <body style="background-color: #C0C0C0">
+    <!-- /container -->
+    <div class="container">
+      <p align="center">
+        <img src="images/logo.png">
+      </p>
+    </div>	    
+    <div class="container">
+      
+      <form class="form-signin" action="welcome.php" method="post">
+        <h2 class="form-signin-heading" align="center">请登录</h2>
+        <input type="text" name="userName" class="form-control" placeholder="用户名" required autofocus>
+        <input type="password" name="inputPassword" class="form-control" placeholder="密码" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+      </form>
+      
+    </div>
+  </body>
+  
+</html>
