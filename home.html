@@ -1,6 +1,6 @@
 <html lang="zh-CN">
-
-<head>
+  
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="=IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,24 +8,57 @@
     <meta name="description" content="hello">
     <meta name="author" content="test">
     <title>账簿管理</title>
-
+    
     <!--inport bootstrap-->
     <link href="./bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
+    
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
-</head>
-
-<body>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+  </head>
+  
+  <body>
     <!-- /container -->
     <div class="container">
-
-        <div class="form-signin">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">邀请人来</button>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">自己来</button>
+      
+      <div class="form-signin">
+        <div class="list-group">
+          <a href="add_host_follower.html" class="list-group-item">
+            <span class="glyphicon glyphicon-star">邀请人来</span>
+          </a>
+          <a href="#" class="list-group-item">
+            <span class="glyphicon glyphicon-star">自己来</span>
+          </a>
         </div>
-
+        <button onclick="logout()" class="btn btn-sm btn-primary btn-block" type="submit">退出</button>
+      </div>
+      
     </div>
-</body>
 
+    <script>
+
+      function logout(){
+        $.ajax({
+          async: false,
+          url: "logout.php",
+
+          success: function(data, status){
+            if('success' == status){
+              if('OK' == data){
+                window.open("index.html", '_self');
+              }
+              else{
+                alert("退出失败");
+              }
+            }
+            else{
+              alert("退出失败");
+            }
+          }
+        });
+      }
+    </script>
+
+  </body>
+  
 </html>

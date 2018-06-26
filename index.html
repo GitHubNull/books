@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
 
-<head>
+<html lang="zh-CN">
+  
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="=IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,36 +10,58 @@
     <meta name="description" content="hello">
     <meta name="author" content="test">
     <title>账金簿首页</title>
-
+    
     <!--inport bootstrap-->
     <link href="./bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
+    
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
-</head>
+    
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+  </head>
+  
+  <body style="background-color: #C0C0C0">
 
-<body style="background-color: #C0C0C0">
+
     <div class="container">
-        <div class="container">
-            <p align="center">
-                <img src="images/logo.png">
-            </p>
-        </div>
-        <div class="jumbotron" style="background-color:#00ee00;">
-            <p>这是礼金簿登记首页，使用请先<a href="login.html">登录</a>。</p>
-            <p>
-                <a class="btn btn-primary btn-lg" role="button" href="login.html">
+      <div class="container">
+        <p align="center">
+          <img src="images/logo.png">
+        </p>
+      </div>
+      <div class="jumbotron" style="background-color:#00ee00;">
+        <p>这是礼金簿登记首页，使用请先<a href="login.html">登录</a>。</p>
+        <p>
+          <a class="btn btn-primary btn-lg" role="button" href="login.html">
             前往登录页面
           </a>
-            </p>
-        </div>
+        </p>
+      </div>
     </div>
-    <div class="container">
-        <p align="center"><a href="adds.html">add</a></p>
-    </div>
-    <div class="container">
-        <p align="center"><a href="tt.html">tt</a></p>
-    </div>
-</body>
 
+    <script>
+      $(document).ready(function(){
+        $.ajax({
+          url: "checkSession.php",
+
+          success: function(data, status){
+            if('success' == status){
+              if('OK' == data){
+                window.open("home.html", '_self');
+              }
+            }
+            else{
+              alert(status);
+            }
+          },
+          error: function(){
+            alert("掉转失败！");
+          }
+
+        });
+      });
+    </script>
+
+  </body>
+  
 </html>
